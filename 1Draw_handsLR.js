@@ -27,6 +27,8 @@ function drawInteraction(faces, hands) {
 
     if (whatGesture == "Peace") {
       fill(255, 38, 219) // pink
+
+      
     }
     if (whatGesture == "Thumbs Up") {
       fill(255, 252, 48) // yellow
@@ -34,11 +36,11 @@ function drawInteraction(faces, hands) {
 
 
     if (hand.handedness === "Right") {
-      rect(middleFingerMcpX, middleFingerMcpY, 100)
+      rect(middleFingerMcpX, middleFingerMcpY, 100)//drawing rectangle on r
     }
 
     if (hand.handedness === "Left") {
-     ellipse(middleFingerMcpX, middleFingerMcpY, 100)
+     ellipse(middleFingerMcpX, middleFingerMcpY, 100)//drawing cirlce on left hand 
     }
     /*
     Stop drawing on the hands here
