@@ -27,21 +27,38 @@ function drawInteraction(faces, hands) {
 
     if (whatGesture == "Peace") {
       fill(255, 38, 219) // pink
+      
 
       
-    }
-    if (whatGesture == "Thumbs Up") {
-      fill(255, 252, 48) // yellow
     }
 
 
     if (hand.handedness === "Right") {
-      rect(middleFingerMcpX, middleFingerMcpY, 100)//drawing rectangle on r
+      rect(200,300, 100)//drawing rectangle on r
     }
 
     if (hand.handedness === "Left") {
-     ellipse(middleFingerMcpX, middleFingerMcpY, 100)//drawing cirlce on left hand 
+      noStroke()
+      fill (250)
+      textFont('Monaco')
+     ellipse(800,300, 100)//drawing cirlce on left hand 
+     ellipse(850,275, 75)
+     ellipse(895,300,80)
+     ellipse(820,340,100)
+     ellipse(860,350,95)
+     
+
     }
+    if (whatGesture == "Thumbs Up") {
+      if (hand.handedness === "Left") {
+
+      textSize(40)
+      strokeWeight(4)
+      fill(0, 191, 255) // blue
+      text('GOOD!',845,320)//WRITES GOOD! WHEN THUMB UP
+      
+    }
+  }
     /*
     Stop drawing on the hands here
     */
