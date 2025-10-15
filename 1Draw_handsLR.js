@@ -4,6 +4,7 @@
 
 /* load images here */
 function prepareInteraction() {
+  myImage = loadImage('/images/atomiccloud.jpg')
   //bgImage = loadImage('/images/background.png');
 }
 
@@ -25,40 +26,86 @@ function drawInteraction(faces, hands) {
 
     let whatGesture = detectHandGesture(hand)
 
-    if (whatGesture == "Peace") {
-      fill(255, 38, 219) // pink
+      if (whatGesture == "Open Palm") { 
+    if (hand.handedness === "Left") {
+      image(myImage,450,150)
       
-
-      
+      textSize(400)
+      textFont('Monaco')
+      strokeWeight(6)
+      fill(162,0,255) // purple
+      text('KA',200,300)
     }
+    if (hand.handedness === "Right") {
+      image(myImage,450,150)
+
+      textSize(400)
+      textFont('Monaco')
+      strokeWeight(6)
+      fill(162,0,255) // purple
+      text('BOOM!',750,700)
+
+    }
+
+  }
 
 
     if (hand.handedness === "Right") {
-      rect(200,300, 100)//drawing rectangle on r
+      fill(250)
+      noStroke()
+      ellipse(200,300, 200,150)//drawing speech bubble
+      triangle(400,300,250,340,270,300 )
     }
 
     if (hand.handedness === "Left") {
       noStroke()
       fill (250)
-      textFont('Monaco')
-     ellipse(800,300, 100)//drawing cirlce on left hand 
+     ellipse(800,300, 100)//draws thought bubble
      ellipse(850,275, 75)
      ellipse(895,300,80)
      ellipse(820,340,100)
      ellipse(860,350,95)
+
+     ellipse(745,390, 55)
      
 
     }
-    if (whatGesture == "Thumbs Up") {
+    if (whatGesture == "Thumbs Up") { 
       if (hand.handedness === "Left") {
-
       textSize(40)
       strokeWeight(4)
+      textFont('Monaco')
       fill(0, 191, 255) // blue
-      text('GOOD!',845,320)//WRITES GOOD! WHEN THUMB UP
+      text('GOOD!',845,320)//WRITES GOOD! IN BUBBLE LEFT SIDE WHEN THUMB UP
       
     }
+    if (hand.handedness === "Right") {
+      textSize(40)
+      textFont('Monaco')
+      strokeWeight(4)
+      fill(0, 191, 255) // blue
+      text('GOOD!',200,300)
+    }
   }
+    if (whatGesture == "Peace") {
+      if (hand.handedness === "Left") {
+      textSize(40)
+      strokeWeight(4)
+      textFont('Monaco')
+      fill(162, 0, 255) // purple
+      text(':)',845,320)
+      
+    }
+     if (hand.handedness === "Right") {
+      textSize(40)
+      textFont('Monaco')
+      strokeWeight(4)
+      fill(162,0,255) // purple
+      text('(:',200,300)
+    }
+  }
+
+  
     /*
     Stop drawing on the hands here
     */
