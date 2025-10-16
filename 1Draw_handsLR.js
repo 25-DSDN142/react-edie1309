@@ -67,7 +67,7 @@ function drawInteraction(faces, hands) {
       strokeWeight(4)
       textFont('Impact')
       fill(0, 191, 255) // BLUE
-      text('GOOD!',835,320)//WRITES GOOD! IN BUBBLE WHEN THUMB UP
+      text('GREAT!',835,320)//WRITES GOOD! IN BUBBLE WHEN THUMB UP
       
     }
     if (hand.handedness === "Right") {
@@ -80,7 +80,7 @@ function drawInteraction(faces, hands) {
       textFont('Impact')
       strokeWeight(4)
       fill(0, 191, 255) // BLUE
-      text('GOOD!',175,300)
+      text('GOOD!',195,300)
     }
   }
     if (whatGesture == "Peace") {
@@ -129,7 +129,7 @@ function drawInteraction(faces, hands) {
        textSize(40)
       strokeWeight(4)
       textFont('Impact')
-      fill(255, 234, 0) // YELLOW
+      fill(255, 61, 0) // RED
       text('OI YOU!',835,320)
       
     }
@@ -142,7 +142,7 @@ function drawInteraction(faces, hands) {
       textSize(40)
       textFont('Impact')
       strokeWeight(4)
-      fill(255, 234, 0) // YELLOW
+      fill(255, 61, 0) // RED
       text('SHHH',190,300)
     }
   }
