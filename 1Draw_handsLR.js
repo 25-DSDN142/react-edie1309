@@ -4,7 +4,8 @@
 
 /* load images here */
 function prepareInteraction() {
-  myImage = loadImage('/images/atomiccloud.jpg')
+  atomic = loadImage('/images/atomic.png')
+  angry = loadImage ('/images/angryanime.png')
   //bgImage = loadImage('/images/background.png');
 }
 
@@ -28,83 +29,136 @@ function drawInteraction(faces, hands) {
 
       if (whatGesture == "Open Palm") { 
     if (hand.handedness === "Left") {
-      image(myImage,450,150)
+      image(atomic,400,200,820,312)// SMALL IMAGE OF EXPLOSION 
       
       textSize(400)
-      textFont('Monaco')
-      strokeWeight(6)
-      fill(162,0,255) // purple
+      textFont('Impact')
+      strokeWeight(20)
+      stroke(255, 154, 0) //ORANGE
+      fill(255, 61, 0) // RED
       text('KA',200,300)
     }
     if (hand.handedness === "Right") {
-      image(myImage,450,150)
+      image(atomic,450,150)
 
       textSize(400)
-      textFont('Monaco')
-      strokeWeight(6)
-      fill(162,0,255) // purple
-      text('BOOM!',750,700)
+      textFont('Impact')
+      strokeWeight(20)
+      stroke(255, 61, 0)// RED
+      fill(255, 154, 0) // ORANGE
+      text('BOOM!',750,700) //LARGE EXPLOSION 
 
     }
 
   }
 
-
-    if (hand.handedness === "Right") {
-      fill(250)
-      noStroke()
-      ellipse(200,300, 200,150)//drawing speech bubble
-      triangle(400,300,250,340,270,300 )
-    }
-
-    if (hand.handedness === "Left") {
-      noStroke()
+    if (whatGesture == "Thumbs Up") { 
+      if (hand.handedness === "Left") {
+         noStroke()
       fill (250)
      ellipse(800,300, 100)//draws thought bubble
      ellipse(850,275, 75)
      ellipse(895,300,80)
      ellipse(820,340,100)
      ellipse(860,350,95)
-
      ellipse(745,390, 55)
-     
-
-    }
-    if (whatGesture == "Thumbs Up") { 
-      if (hand.handedness === "Left") {
-      textSize(40)
+      
+     textSize(40)
       strokeWeight(4)
-      textFont('Monaco')
-      fill(0, 191, 255) // blue
-      text('GOOD!',845,320)//WRITES GOOD! IN BUBBLE LEFT SIDE WHEN THUMB UP
+      textFont('Impact')
+      fill(0, 191, 255) // BLUE
+      text('GOOD!',835,320)//WRITES GOOD! IN BUBBLE WHEN THUMB UP
       
     }
     if (hand.handedness === "Right") {
+      fill(250)
+      noStroke()
+      ellipse(200,300, 200,150)//drawing speech bubble
+      triangle(400,300,250,340,270,300 )
+      
       textSize(40)
-      textFont('Monaco')
+      textFont('Impact')
       strokeWeight(4)
-      fill(0, 191, 255) // blue
-      text('GOOD!',200,300)
+      fill(0, 191, 255) // BLUE
+      text('GOOD!',175,300)
     }
   }
     if (whatGesture == "Peace") {
       if (hand.handedness === "Left") {
-      textSize(40)
+        noStroke()
+      fill (250)
+     ellipse(800,300, 100)//draws thought bubble
+     ellipse(850,275, 75)
+     ellipse(895,300,80)
+     ellipse(820,340,100)
+     ellipse(860,350,95)
+     ellipse(745,390, 55)
+      
+     textSize(40)
       strokeWeight(4)
-      textFont('Monaco')
-      fill(162, 0, 255) // purple
+      textFont('Impact')
+      fill(162, 0, 255) // PURPLE
       text(':)',845,320)
       
     }
      if (hand.handedness === "Right") {
+      fill(250)
+      noStroke()
+      ellipse(200,300, 200,150)//drawing speech bubble
+      triangle(400,300,250,340,270,300 )
+      
       textSize(40)
-      textFont('Monaco')
+      textFont('Impact')
       strokeWeight(4)
-      fill(162,0,255) // purple
+      fill(162,0,255) // PURPLE
       text('(:',200,300)
     }
   }
 
+  if (whatGesture == "Pointing") {
+      if (hand.handedness === "Left") {
+        noStroke()
+      fill (250)
+     ellipse(800,300, 100)//draws thought bubble
+     ellipse(850,275, 75)
+     ellipse(895,300,80)
+     ellipse(820,340,100)
+     ellipse(860,350,95)
+     ellipse(745,390, 55)
+      
+       textSize(40)
+      strokeWeight(4)
+      textFont('Impact')
+      fill(255, 234, 0) // YELLOW
+      text('OI YOU!',835,320)
+      
+    }
+     if (hand.handedness === "Right") {
+     fill(250)
+      noStroke()
+      ellipse(200,300, 200,150)//drawing speech bubble
+      triangle(400,300,250,340,270,300 )
+     
+      textSize(40)
+      textFont('Impact')
+      strokeWeight(4)
+      fill(255, 234, 0) // YELLOW
+      text('SHHH',190,300)
+    }
+  }
+
+    if (whatGesture == "Fist") {
+      if (hand.handedness === "Left") {
+     image(angry,450,150)// ANGRY ANIME 
+     
+      
+    }
+     if (hand.handedness === "Right") {
+    image(angry,450,150)// ANGRY ANIME 
+     
+  
+    }
+  }
   
     /*
     Stop drawing on the hands here
